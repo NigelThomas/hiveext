@@ -4,13 +4,13 @@
 
 HERE=$(cd `dirname $0`; pwd)
 BASE_IMAGE=sqlstream/streamlab-git
-: ${CONTAINER_NAME:=hivepar}
+: ${CONTAINER_NAME:=hiveext}
 
 # This is a SQL project - there are no SLAB files
 : ${LOAD_SLAB_FILES:=}
 
 GIT_ACCOUNT=https://github.com/NigelThomas
-GIT_PROJECT_NAME=hivepar
+GIT_PROJECT_NAME=hiveext
 
 # default image label is latest 6.0.1 (:release)
 : ${BASE_IMAGE_LABEL:=release}

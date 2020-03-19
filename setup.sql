@@ -1,5 +1,5 @@
-CREATE OR REPLACE SCHEMA "hivepar";
-SET SCHEMA '"hivepar"';
+CREATE OR REPLACE SCHEMA "hiveext";
+SET SCHEMA '"hiveext"';
 
 
 CREATE OR REPLACE FOREIGN TABLE "edr_shards" 
@@ -206,10 +206,10 @@ OPTIONS (
         
         "FILE_ROTATION_TIME" '%FILE_ROTATION_TIME%',   -- force frequent file rotations
         "ORIGINAL_FILENAME" 'pending-edr.orc',
-        "HDFS_OUTPUT_DIR" '/data/svc_sqlstream_guavus/hivepar_edr', -- can we use this
+        "HDFS_OUTPUT_DIR" '/data/svc_sqlstream_guavus/hiveext_edr', -- can we use this
         
-        "HIVE_SCHEMA_NAME" 'hivepar',
-        "HIVE_TABLE_NAME" 'hive_edr_hivepar',
+        "HIVE_SCHEMA_NAME" 'hiveext',
+        "HIVE_TABLE_NAME" 'hive_edr_hiveext',
         "HIVE_URI" 'jdbc:hive2://sqlstream01-slv-01.cloud.in.guavus.com:2181,sqlstream01-slv-02.cloud.in.guavus.com:2181,sqlstream01-slv-03.cloud.in.guavus.com:2181/;serviceDiscoveryMode=zooKeeper;zooKeeperNamespace=hiveserver2-hive2',
         "HIVE_METASTORE_URIS" 'thrift://sqlstream01-mst-01.cloud.in.guavus.com:9083,thrift://sqlstream01-mst-02.cloud.in.guavus.com:9083',
         "CONFIG_PATH" '/home/sqlstream/core-site.xml:/home/sqlstream/hdfs-site.xml',
